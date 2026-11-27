@@ -12,7 +12,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-PLUGIN = [".claude-plugin", ".mcp.json", "server", "skills", "README.md", "LICENSE"]
+PLUGIN = [".claude-plugin", "server", "skills", "README.md", "LICENSE"]
 SHARE = PLUGIN + ["INSTALL.md", "install.py", "build_plugin.py", ".gitignore"]
 EXCLUDE = re.compile(r"(__pycache__|\.pyc$|\.key$|api[- ]?key|Zotero API\.txt$)", re.I)
 
@@ -22,7 +22,8 @@ def validate():
     manifest = json.loads((ROOT / ".claude-plugin" / "plugin.json").read_text(encoding="utf-8"))
     if not re.fullmatch(r"[a-z0-9]+(-[a-z0-9]+)*", manifest.get("name", "")):
         errors.append("plugin.json: name must be kebab-case")
-    json.loads((ROOT / ".mcp.json").read_text(encoding="utf-8"))
+    if "mcpServers" not in manifest:
+        errors.append("plugin.json: mcpServers missing")
     for skill in (ROOT / "skills").iterdir():
         md = skill / "SKILL.md"
         if not md.exists():
