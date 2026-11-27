@@ -1,0 +1,13 @@
+{
+  "name": "sci-zotero-research",
+  "version": "0.5.0",
+  "description": "Research with your local Zotero library: find and download papers, read and transcribe PDFs to Markdown, and keep notes and tags in Zotero.",
+  "keywords": [
+    "zotero",
+    "research",
+    "papers",
+    "pdf",
+    "markdown"
+  ],
+  "license": "MIT"
+}

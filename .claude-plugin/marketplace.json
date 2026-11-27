@@ -1,0 +1,17 @@
+{
+  "name": "claude-zotero-research",
+  "owner": {
+    "name": "Anton2320"
+  },
+  "metadata": {
+    "description": "The sci-zotero-research plugin: research with your local Zotero library."
+  },
+  "plugins": [
+    {
+      "name": "sci-zotero-research",
+      "source": "./",
+      "description": "Research with your local Zotero library: find and download papers (arXiv, open-access sources), read and transcribe PDFs to Markdown, and keep notes and tags in Zotero.",
+      "category": "research"
+    }
+  ]
+}

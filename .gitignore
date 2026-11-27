@@ -1,0 +1,11 @@
+# Secrets
+Zotero API.txt
+zotero-api-key.txt
+*.key
+.env
+
+# Python and build output
+__pycache__/
+*.pyc
+.venv/
+dist/
